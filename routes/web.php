@@ -6,6 +6,7 @@ use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\KrsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TugasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,4 +61,18 @@ Route::middleware(['adminauth'])->group(function () {
     Route::get('/krs/{id}/edit', [KrsController::class, 'edit']);
     Route::put('/krs/{id}', [KrsController::class, 'update']);
     Route::delete('/krs/{id}', [KrsController::class, 'destroy']);
+});
+
+Route::prefix('tugas')->group(function () {
+    Route::get('/', [TugasController::class, 'index'])->name('tugas.index');
+    Route::get('/create', [TugasController::class, 'create'])->name('tugas.create');
+    Route::post('/tugas/store', [TugasController::class, 'store'])->name('tugas.store');
+    Route::get('/{id}/edit', [TugasController::class, 'edit'])->name('tugas.edit');
+    Route::put('/{id}', [TugasController::class, 'update'])->name('tugas.update');
+    Route::delete('/{id}', [TugasController::class, 'destroy'])->name('tugas.destroy');
+
+    Route::get('/pengerjaan', [TugasController::class, 'pengerjaan'])->name('tugas.pengerjaan');
+    Route::post('/', [TugasController::class, 'storePengerjaan'])->name('tugas.storePengerjaan');
+    Route::post('/update-nilai/{id}', [TugasController::class, 'updateNilai'])->name('tugas.updateNilai');
+    Route::get('/laporan', [TugasController::class, 'laporan'])->name('tugas.laporan');
 });
