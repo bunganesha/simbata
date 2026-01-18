@@ -6,8 +6,6 @@ use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\KrsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DosenController;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -34,8 +32,6 @@ Route::middleware(['adminauth'])->group(function () {
     Route::post('/admin/{id}/update', [AdminController::class, 'update']);
     Route::get('/admin/{id}/delete', [AdminController::class, 'destroy']);
 });
-<?php
-
 
 // ======================= DOSEN =======================
 Route::get('/dosen', [DosenController::class, 'index']);
