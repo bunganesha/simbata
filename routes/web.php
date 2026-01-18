@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/dashboard', function () {
-    return view('home.dashboard');
+Route::middleware(['adminauth'])->group(function () {
+    Route::get('/', [AdminController::class, 'index']);
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/admin/create', [AdminController::class, 'create']);
+    Route::post('/admin/save', [AdminController::class, 'store']);
+    Route::get('/admin/{id}/edit', [AdminController::class, 'show']);
+    Route::post('/admin/{id}/update', [AdminController::class, 'update']);
+    Route::get('/admin/{id}/delete', [AdminController::class, 'destroy']);
 });

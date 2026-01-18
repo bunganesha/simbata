@@ -14,13 +14,12 @@
                 <i class="bi bi-menu-button-wide"></i><span>Menu Utama</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                @can('lihat data pegawai')
+           
                 <li>
-                    <a href="/employee">
-                        <i class="bi bi-circle"></i><span>Pegawai</span>
+                    <a href="/dosen">
+                        <i class="bi bi-circle"></i><span>Dosen</span>
                     </a>
                 </li>
-                @endcan
                 @can('lihat data buku')
                 <li>
                     <a href="/book">
