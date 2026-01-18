@@ -51,6 +51,28 @@
                 @endcan
             </ul>
         </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#tugas-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-journal-text"></i><span>Manajemen Tugas</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="tugas-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="/tugas">
+                        <i class="bi bi-list-check"></i><span>Daftar Tugas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tugas/pengerjaan"> 
+                        <i class="bi bi-pencil-square"></i><span>Input Nilai</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tugas/laporan">
+                        <i class="bi bi-file-earmark-bar-graph"></i><span>Laporan Beban</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
         @can('lihat data role permission')
             <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
