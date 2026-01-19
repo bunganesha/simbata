@@ -18,49 +18,12 @@
                 <span>Menu Utama</span>
                 <i class="bi bi-chevron-down ms-auto"></i>
             </a>
-
             <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-
-                @can('lihat data pegawai')
                 <li>
-                    <a href="/employee">
-                        <i class="bi bi-circle"></i><span>Pegawai</span>
+                    <a href="/admin">
+                        <i class="bi bi-circle"></i><span>Admin</span>
                     </a>
                 </li>
-                @endcan
-
-                @can('lihat data buku')
-                <li>
-                    <a href="/book">
-                        <i class="bi bi-circle"></i><span>Buku</span>
-                    </a>
-                </li>
-                @endcan
-
-                @can('lihat data kategori')
-                <li>
-                    <a href="/category">
-                        <i class="bi bi-circle"></i><span>Kategori</span>
-                    </a>
-                </li>
-                @endcan
-
-                @can('lihat data rak')
-                <li>
-                    <a href="/shelf">
-                        <i class="bi bi-circle"></i><span>Rak</span>
-                    </a>
-                </li>
-                @endcan
-
-                @can('lihat data peminjaman')
-                <li>
-                    <a href="/lending">
-                        <i class="bi bi-circle"></i><span>Peminjaman</span>
-                    </a>
-                </li>
-                @endcan
-
             </ul>
         </li>
 
@@ -104,7 +67,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/tugas/pengerjaan"> 
+                    <a href="/tugas/pengerjaan">
                         <i class="bi bi-pencil-square"></i><span>Input Nilai</span>
                     </a>
                 </li>
