@@ -31,12 +31,13 @@ class LoginController extends Controller
             return back()->with('error', 'Password salah');
         }
 
-        // simpan session login
+        // === SIMPAN SESSION (SESUAI MIDDLEWARE) ===
         Session::put('admin_login', true);
-        Session::put('admin_id', $admin->id_admin);
+        Session::put('admin_id', $admin->id);     // ⬅️ FIX DI SINI
         Session::put('admin_nama', $admin->nama);
 
-        return redirect('/admin');
+        // === ARAHKAN KE DASHBOARD ===
+        return redirect('/dashboard');
     }
 
     public function logout()
@@ -44,6 +45,4 @@ class LoginController extends Controller
         Session::flush();
         return redirect('/login');
     }
-
-
 }

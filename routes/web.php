@@ -5,6 +5,7 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\KrsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -26,8 +27,8 @@ Route::get('/logout', [LoginController::class, 'logout']);
 // ===================== ADMIN AREA (PROTECTED) =====================
 Route::middleware(['adminauth'])->group(function () {
 
-    // DASHBOARD
-    Route::get('/dashboard', [AdminController::class, 'index']);
+    // ===================== DASHBOARD =====================
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 
     // ===================== ADMIN =====================
     Route::get('/admin', [AdminController::class, 'index']);
