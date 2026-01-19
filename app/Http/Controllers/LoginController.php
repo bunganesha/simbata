@@ -36,7 +36,7 @@ class LoginController extends Controller
         Session::put('admin_id', $admin->id_admin);
         Session::put('admin_nama', $admin->nama);
 
-        return redirect('/admin');
+        return redirect('/dashboard');
     }
 
     public function logout()
